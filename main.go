@@ -17,6 +17,7 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/getUser", gin.WrapH(controller.GetUserHandler(db)))
+	r.GET("/getUser/:id", gin.WrapH(controller.GetUserByID(db)))
 	r.POST("/createUser", gin.WrapH(controller.CreateUserHandler(db)))
 	r.PUT("/updateUser/:id", gin.WrapH(controller.UpdateUserHandler(db)))
 	r.DELETE("/deleteUser/:id", gin.WrapH(controller.DeleteUserHandler(db)))
